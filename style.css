@@ -1,0 +1,33 @@
+ .container{
+   width: 80vw;
+  margin-top: 10vh;
+}
+
+.card{
+  margin-top:6vh;
+}
+
+.card-header{
+  background:#000000;
+  color:#1DB954;
+
+}
+
+form{
+background: #000000;
+color:#1DB954;
+opacity:0.85;
+}
+
+.btn{
+  background:#1DB954;
+  color:white;
+}
+
+.btn:hover{
+color:black;
+}
+
+a{
+  color:white;
+}
