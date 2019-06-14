@@ -69,9 +69,10 @@ let checkUserName = () => {
         phone: phone
 
       })
+
       $("#transfer-button").attr("href", "index.html")
       $("#transfer-button").click()
-      // console.log("looping")
+      console.log("looping")
     }
 
     else if (count === 1 && looper === 1) {
@@ -97,6 +98,7 @@ let checkUserName = () => {
 
 
 let checkSignIn = () => {
+
   let userSignIn = $("#userName").val().trim()
   let userPassword = $("#user-password").val().trim()
 
@@ -109,29 +111,31 @@ let checkSignIn = () => {
 
         database.ref(userSignIn).on("value", function (data) {
           let userKeysArray = Object.keys(data.val())
-          // console.log(data.val()[userKeysArray[0]].password)
-          // console.log(userPassword)
+          console.log(data.val()[userKeysArray[0]].password)
+          console.log(userPassword)
 
           if (userPassword == data.val()[userKeysArray[0]].password) {
-            // console.log("loading correctly")
+            console.log("loading correctly")
           }
-          else {
-            $(".container").attr("id", "shake-me")
-            $("#change-title-sign-in").text("Incorrect Username Or Password")
-            $("#change-title-sign-in").css("color", "red")
-            $("#transfer-button").attr("href", "#")
-            setTimeout(function () {
-              $(".container").attr("id", "")
 
-
-            }, 1000)
-            setTimeout(function () {
-              $("#change-title-sign-in").css("color", "#1DB954")
-              $("#change-title-sign-in").text("Sign Up")
-  
-            }, 2000)
-          }
         })
+      }
+      else {
+
+        $(".container").attr("id", "shake-me")
+        $("#change-title-sign-in").text("Incorrect Username Or Password")
+        $("#change-title-sign-in").css("color", "red")
+        $("#transfer-button").attr("href", "#")
+        setTimeout(function () {
+          $(".container").attr("id", "")
+
+
+        }, 1000)
+        setTimeout(function () {
+          $("#change-title-sign-in").css("color", "#1DB954")
+          $("#change-title-sign-in").text("Sign Up")
+
+        }, 2000)
       }
     }
   })
@@ -159,6 +163,7 @@ $("#submit-button").on("click", function () {
 $("#sign-in").on("click", function () {
 
   checkSignIn()
+
 
 })
 
