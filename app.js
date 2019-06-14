@@ -3,9 +3,7 @@ let looper = 0
 
 let database = firebase.database()
 
-let pushData = (firstName, lastName) => {
 
-}
 
 
 
@@ -31,7 +29,7 @@ let checkUserName = () => {
     looper++
 
     let value = data.val()
-    console.log(data.val())
+    // console.log(data.val())
     let keysArray = Object.keys(value);
 
 
@@ -43,7 +41,7 @@ let checkUserName = () => {
 
       if (keysArray[i] === userName) {
 
-        console.log("checked")
+        // console.log("checked")
         count = 1
         stop()
 
@@ -53,9 +51,9 @@ let checkUserName = () => {
     }
 
     if (count === 0) {
-      console.log("pushing")
+      // console.log("pushing")
 
-      pushData()
+
 
 
       database.ref(userName).push({
@@ -71,7 +69,9 @@ let checkUserName = () => {
         phone: phone
 
       })
-
+      $("#transfer-button").attr("href", "index.html")
+      $("#transfer-button").click()
+      // console.log("looping")
     }
 
     else if (count === 1 && looper === 1) {
@@ -103,17 +103,17 @@ let checkSignIn = () => {
   database.ref().on("value", function (data) {
     let keys = Object.keys(data.val());
     for (var i = 0; i < keys.length; i++) {
-      console.log(keys)
-      console.log(userSignIn)
+      // console.log(keys)
+      // console.log(userSignIn)
       if (userSignIn == keys[i]) {
 
         database.ref(userSignIn).on("value", function (data) {
           let userKeysArray = Object.keys(data.val())
-          console.log(data.val()[userKeysArray[0]].password)
-          console.log(userPassword)
+          // console.log(data.val()[userKeysArray[0]].password)
+          // console.log(userPassword)
 
           if (userPassword == data.val()[userKeysArray[0]].password) {
-            console.log("loading correctly")
+            // console.log("loading correctly")
           }
           else {
             $(".container").attr("id", "shake-me")
@@ -128,6 +128,7 @@ let checkSignIn = () => {
             setTimeout(function () {
               $("#change-title-sign-in").css("color", "#1DB954")
               $("#change-title-sign-in").text("Sign Up")
+  
             }, 2000)
           }
         })
