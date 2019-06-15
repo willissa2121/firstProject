@@ -1,5 +1,6 @@
 
 let looper = 0
+let j = 0;
 
 let database = firebase.database()
 
@@ -57,9 +58,9 @@ let checkUserName = () => {
         phone: phone,
         driver: "",
         license: "",
-        carMake : "",
+        carMake: "",
         carModel: "",
-        carMileage:"",
+        carMileage: "",
         MPG: ""
 
 
@@ -74,7 +75,7 @@ let checkUserName = () => {
 
     else if (count === 1 && looper === 1) {
       // document.getElementById("sign-in").disabled = true
-      document.getElementById("submit-button").disabled=true;
+      document.getElementById("submit-button").disabled = true;
 
       $(".container").attr("id", "shake-me")
       $("#change-title").text("Username is Unavailable")
@@ -102,7 +103,7 @@ let checkUserName = () => {
 
       }, 1000)
       setTimeout(function () {
-        document.getElementById("submit-button").disabled=false;
+        document.getElementById("submit-button").disabled = false;
         $("#change-title").css("color", "#1DB954")
         $("#change-title").text("Sign Up")
       }, 2000)
@@ -141,7 +142,7 @@ let checkSignIn = () => {
 
     }
     setTimeout(function () {
-      document.getElementById("sign-in").disabled=true;
+      document.getElementById("sign-in").disabled = true;
       $(".container").attr("id", "shake-me")
       $("#change-title-sign-in").text("Incorrect Username Or Password")
       $("#change-title-sign-in").css("color", "red")
@@ -156,7 +157,7 @@ let checkSignIn = () => {
 
       }, 1000)
       setTimeout(function () {
-        document.getElementById("sign-in").disabled=false;
+        document.getElementById("sign-in").disabled = false;
         $("#change-title-sign-in").css("color", "#1DB954")
         $("#change-title-sign-in").text("Sign Up")
 
@@ -196,7 +197,15 @@ $("#sign-in").on("click", function () {
 })
 
 let checkedDriver = () => {
-$(".input-hidden").css({"position": "static", "opacity": "1", "transition": "opacity 1s linear" })
+
+  if (j === 0) {
+    $(".input-hidden").css({ "position": "static", "opacity": "1", "transition": "opacity 1s linear" })
+    j=1
+  }
+  else if (j ===1){
+    $(".input-hidden").css({ "position": "absolute", "opacity": "0", "transition": "opacity 0.00001s linear"})
+    j=0;
+  }
 
 
 
