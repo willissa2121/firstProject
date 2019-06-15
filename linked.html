@@ -73,60 +73,93 @@
 
 
       <label for="driverCheckbox">Interested in becoming a Driver?</label>
-      <input type="checkbox" id="driverCheckbox">
+      <input type="checkbox" id="driverCheckbox" onclick="checkedDriver()">
+
+      <!--Hidden group that will show only fi beckbox clicked-->
+      <div class="input-hidden">
+        <div class="form-row">
+
+          <div class="col-md-3">
+            <input type="" id="registerMake" class="form-control mt-3" placeholder="car make"
+              aria-describedby="defaultRegisterFormPasswordHelpBlock">
+          </div>
+          <div class="col-md-3">
+            <input id="registerModel" type="text" class="form-control mt-3" placeholder="car model">
+          </div>
+          <div class="col-md-3">
+            <input id="registeryear" type="text" class="form-control mt-3" placeholder="car year">
+          </div>
+
+          <div class="col-md-3">
+            <input id="registerMPG" type="text" class="form-control mt-3" placeholder="MPG">
+          </div>
+
+          <input type="text" id="registerLicense" class="form-control mt-4" placeholder="license #">
+
+        </div>
+      </div>
+
+      <button class="mt-4 btn btn-block">Sign Up</button>
+
+  </div>
 
 
 
 
 
-      <!-- Newsletter -->
 
 
-      <!-- Sign up button -->
-      <button id="submit-button" class="btn my-4 btn-block" type="button">Sign Up</button>
 
-      <!-- Social register -->
-      <hr>
 
-      <!-- Terms of service -->
-      <p>By clicking
-        <em>Sign up</em> you agree to our
-        <a href="index.html">terms of service</a>
+  <!-- Newsletter -->
+
+
+  <!-- Sign up button -->
+
+
+  <!-- Social register -->
+  <hr>
+
+  <!-- Terms of service -->
+  <p>By clicking
+    <em>Sign up</em> you agree to our
+    <a href="index.html">terms of service</a>
 
     </form>
-  </div>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
 
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyCjLLosE9Zs0oZvrHosEd2_q75KVWxjokA",
-      authDomain: "rideshare-fe506.firebaseapp.com",
-      databaseURL: "https://rideshare-fe506.firebaseio.com",
-      projectId: "rideshare-fe506",
-      storageBucket: "rideshare-fe506.appspot.com",
-      messagingSenderId: "611609382463",
-      appId: "1:611609382463:web:6b761d7c73c33300"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-  <script src="app.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCjLLosE9Zs0oZvrHosEd2_q75KVWxjokA",
+        authDomain: "rideshare-fe506.firebaseapp.com",
+        databaseURL: "https://rideshare-fe506.firebaseio.com",
+        projectId: "rideshare-fe506",
+        storageBucket: "rideshare-fe506.appspot.com",
+        messagingSenderId: "611609382463",
+        appId: "1:611609382463:web:6b761d7c73c33300"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>

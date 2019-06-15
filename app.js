@@ -32,29 +32,17 @@ let checkUserName = () => {
     // console.log(data.val())
     let keysArray = Object.keys(value);
 
-
-
-
-
-
     for (var i = 0; i < keysArray.length; i++) {
 
       if (keysArray[i] === userName) {
 
         // console.log("checked")
         count = 1
-
-
       }
-
-
     }
 
     if (count === 0) {
       // console.log("pushing")
-
-
-
 
       database.ref(userName).push({
 
@@ -66,7 +54,15 @@ let checkUserName = () => {
         address: address,
         city: city,
         state: state,
-        phone: phone
+        phone: phone,
+        driver: "",
+        license: "",
+        carMake : "",
+        carModel: "",
+        carMileage:"",
+        MPG: ""
+
+
 
       })
 
@@ -86,6 +82,8 @@ let checkUserName = () => {
       $("#transfer-button").attr("href", "#")
       $("#registerFirstName").val()
       let lastName = $("#registerLastName").val()
+
+
 
       //Reset all text fields to empty
       $("#registerEmail").val('')
@@ -108,11 +106,11 @@ let checkUserName = () => {
         $("#change-title").css("color", "#1DB954")
         $("#change-title").text("Sign Up")
       }, 2000)
-
     }
-
   })
 }
+
+//main sign in page function
 
 
 let checkSignIn = () => {
@@ -135,9 +133,6 @@ let checkSignIn = () => {
           if (userPassword == data.val()[userKeysArray[0]].password) {
             console.log("loading correctly")
             window.location.href = "signedIn.html"
-
-
-
 
           }
 
@@ -168,7 +163,6 @@ let checkSignIn = () => {
 
       }, 2000)
     }, 500)
-
   })
 }
 
@@ -200,6 +194,13 @@ $("#sign-in").on("click", function () {
 
 
 })
+
+let checkedDriver = () => {
+$(".input-hidden").css({"position": "static", "opacity": "1", "transition": "opacity 1s linear" })
+
+
+
+}
 
 // function initialize() {
 //   var input = document.getElementById('search-text-field');
